@@ -2,7 +2,7 @@ const express = require("express")
 const router = express();
 const User = require("../models/User");
 // const bcrypt = require("bcrypt");
-const argon2 = require("argon2")
+// const argon2 = require("argon2")
 const Coupon = require("../models/Coupon")
 const session = require("express-session");
 const jwt = require("jsonwebtoken")
@@ -104,13 +104,13 @@ router.post("/register",
         // const salt = await bcrypt.genSalt(10);
         // const hashedPass = await bcrypt.hash(req.body.password, salt);
 
-        const hashedPass = await argon2.hash(req.body.password);
+        // const hashedPass = await argon2.hash(req.body.password);
 
         const newUser = new User({
           username: req.body.username,
           phone: req.body.phone,
           email: req.body.email,
-          password: hashedPass,
+          password: req.body.password,
         });
 
         const user = await newUser.save();
@@ -192,7 +192,11 @@ router.post('/login', [
           return res.status(400).json({ error: 'Wrong Credentials' });
         }
 
-        const validate = await argon2.verify(req.body.password, user.password);
+        // const validate = await argon2.verify(req.body.password, user.password);
+
+        const validate = req.body.password === user.password;
+        
+
         if (!validate) {
           return res.status(400).json({ error: 'Wrong Credentials' });
         }
