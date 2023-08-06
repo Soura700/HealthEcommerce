@@ -1,7 +1,8 @@
 const express = require("express")
 const router = express();
 const User = require("../models/User");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
+const argon = require("argon2")
 const Coupon = require("../models/Coupon")
 const session = require("express-session");
 const jwt = require("jsonwebtoken")
