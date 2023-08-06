@@ -2,7 +2,7 @@ const express = require("express")
 const router = express();
 const User = require("../models/User");
 // const bcrypt = require("bcrypt");
-const argon = require("argon2")
+const argon2 = require("argon2")
 const Coupon = require("../models/Coupon")
 const session = require("express-session");
 const jwt = require("jsonwebtoken")
@@ -101,8 +101,10 @@ router.post("/register",
           return res.status(401).json({ error: "Phone number already exists" });
         }
 
-        const salt = await bcrypt.genSalt(10);
-        const hashedPass = await bcrypt.hash(req.body.password, salt);
+        // const salt = await bcrypt.genSalt(10);
+        // const hashedPass = await bcrypt.hash(req.body.password, salt);
+
+        const hashedPass = await argon2.hash(req.body.password);
 
         const newUser = new User({
           username: req.body.username,
@@ -190,7 +192,7 @@ router.post('/login', [
           return res.status(400).json({ error: 'Wrong Credentials' });
         }
 
-        const validate = await bcrypt.compare(req.body.password, user.password);
+        const validate = await argon2.verify(req.body.password, user.password);
         if (!validate) {
           return res.status(400).json({ error: 'Wrong Credentials' });
         }
