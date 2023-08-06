@@ -459,8 +459,11 @@ router.post("/reset-password/:id/:token", async (req, res, next) => {
   const secret = process.env.JWT_SECRET + user.password
   try {
     const payload = jwt.verify(token, secret)
-    const salt = await bcrypt.genSalt(12);
-    const hashedPass = await bcrypt.hash(req.body.password, salt);
+    
+    // const salt = await bcrypt.genSalt(12);
+    // const hashedPass = await bcrypt.hash(req.body.password, salt);
+
+    const hashedPass = await argon2.hash(req.body.password);
     await User.updateOne(
       {
         _id: id,
