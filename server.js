@@ -165,6 +165,8 @@ app.get("/myProfile" ,  auth.isLogin, (req,res) =>{
 })
 
 
+console.log("My name is Soura");
+
 // Connecting to the port
 // app.listen(5500,()=>{
 //     console.log("Listening to the Port 5500");
