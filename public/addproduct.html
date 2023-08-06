@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./css/admin.css" />
+
+    <link
+      href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <title>AdminHub</title>
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <i class="bx bxs-smile"></i>
+        <span class="text">AdminHub</span>
+      </a>
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="#">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-shopping-bag-alt"></i>
+            <span class="text">My Store</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-shopping-bag-alt"></i>
+            <span class="text">Add Product</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-doughnut-chart"></i>
+            <span class="text">Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-message-dots"></i>
+            <span class="text">Message</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-group"></i>
+            <span class="text">Team</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#">
+            <i class="bx bxs-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
+
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <a href="#" class="nav-link">Categories</a>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+        <a href="#" class="notification">
+          <i class="bx bxs-bell"></i>
+          <span class="num">8</span>
+        </a>
+        <a href="#" class="profile">
+          <img src="img/people.png" />
+        </a>
+      </nav>
+      <!-- NAVBAR -->
+
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Add Product</h1>
+          </div>
+        </div>
+        <form class="form-horizontal" method="post" action="/api/products" enctype="multipart/form-data">
+          <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="product_name"
+                >PRODUCT NAME</label
+              >
+              <div class="col-md-4">
+                <input
+                  id="productname"
+                  name="productname"
+                  placeholder="PRODUCT NAME"
+                  class="form-control input-md"
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="product_name_fr"
+                >PRODUCT CATEGORY</label
+              >
+              <div class="col-md-4">
+                <input
+                  id="product_name_fr"
+                  name="categories"
+                  placeholder="PRODUCT CATEGORY"
+                  class="form-control input-md"
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="available_quantity"
+                >AVAILABLE QUANTITY</label
+              >
+              <div class="col-md-4">
+                <input
+                  id="available_quantity"
+                  name="countInStock"
+                  placeholder="AVAILABLE QUANTITY"
+                  class="form-control input-md"
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="available_quantity"
+                >PRICE</label
+              >
+              <div class="col-md-4">
+                <input
+                  id="price"
+                  name="price"
+                  placeholder="PRICE"
+                  class="form-control input-md"
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="percentage_discount"
+                >OFFER PRICE</label
+              >
+              <div class="col-md-4">
+                <input
+                  id="offer_price"
+                  name=" offerPrice"
+                  placeholder="OFFER PRICE"
+                  class="form-control input-md"
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <!-- File Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="filebutton"
+                >Product_image</label
+              >
+              <div class="col-md-4">
+                <input
+                  id="filebutton"
+                  name="img"
+                  class="input-file"
+                  type="file"
+                />
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="singlebutton"
+                >Create</label
+              >
+              <div class="col-md-4">
+                <button
+                  id="singlebutton"
+                  name="singlebutton"
+                  class="btn btn-primary"
+                  type="submit"
+                >
+                  Create Product
+                </button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </main>
+    </section>
+
+    <script src="./js/admin.js"></script>
+  </body>
+</html>

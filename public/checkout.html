@@ -1,0 +1,779 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HealthEasy</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Place favicon.png in the root directory -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- Font Icons css -->
+    <link rel="stylesheet" href="css/font-icons.css">
+    <!-- plugins css -->
+    <link rel="stylesheet" href="css/plugins.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style2.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css copy/style.css">
+    <link rel="stylesheet" href="css copy/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+
+      <!-- ICONS  -->
+      <script src="https://kit.fontawesome.com/51cd0e83eb.js" crossorigin="anonymous"></script>
+
+
+
+      <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+
+      <script src="https://js.stripe.com/v3/"></script>
+
+
+      
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+      
+      <script src="checkout.js"></script>
+
+</head>
+
+
+<body  onload="test(); getData()">
+    <div class="top-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-7">
+                    <ul class="top-header-contact-info">
+                        <li><i class="fa-solid fa-phone"></i> <a href="tel:+1234567898">(+123) 456-7898</a></li>
+                        <li><i class="fa-solid fa-location-dot"></i> <a href="#" target="_blank">6890 Blvd, The Bronx, NY 1058, USA</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6 col-md-5">
+                    <ul class="top-header-menu">
+                        <li><a href="profile-authentication.html">My Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Header Area -->
+
+    <!-- Start Navbar Area -->
+    <div class="navbar-area">
+        <div class="drodo-responsive-nav">
+            <div class="container">
+                <div class="drodo-responsive-menu">
+                    <div class="logo">
+                        <a href="/">
+                                <img id="image" src="./img/HealthEasy-removebg-preview.png" alt="logo">
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="drodo-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="/">
+                            <img  style="height: 100px; width: 100px;" src="./img/HealthEasy-removebg-preview.png" alt="logo">
+                        </a>
+
+                    <div class="collapse navbar-collapse mean-menu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="#" class="nav-link active">Home <i class="fa-solid fa-chevron-down fa-sm"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="/" class="nav-link active">Home Demo - 1</a></li>
+
+                                    <li class="nav-item"><a href="/" class="nav-link">Home Demo - 2</a></li>
+
+                                    <li class="nav-item"><a href="/" class="nav-link">Home Demo - 3</a></li>
+
+                                    <li class="nav-item"><a href="/" class="nav-link">Home Demo - 4</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item megamenu"><a href="#" class="nav-link">Shop <i class="fa-solid fa-chevron-down fa-sm"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Shop Styles</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="/">Left Sidebar</a></li>
+
+                                                        <li><a href="/">Left Sidebar With Categories</a></li>
+
+                                                        <li><a href="/">Right Sidebar</a></li>
+
+                                                        <li><a href="/">Right Sidebar With Categories</a></li>
+
+                                                        <li><a href="/">Without Sidebar</a></li>
+
+                                                        <li><a href="/">With Left Sidebar Fullwidth</a></li>
+
+                                                        <li><a href="/">With Right Sidebar Fullwidth</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Shop Styles 2</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="/">Left Sidebar</a></li>
+
+                                                        <li><a href="/">Left Sidebar With Categories</a></li>
+
+                                                        <li><a href="/">Right Sidebar</a></li>
+
+                                                        <li><a href="/">Right Sidebar With Categories</a></li>
+
+                                                        <li><a href="/">Without Sidebar</a></li>
+
+                                                        <li><a href="/">With Left Sidebar Fullwidth</a></li>
+
+                                                        <li><a href="/">With Right Sidebar Fullwidth</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Shop Styles 3</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="/">Left Sidebar</a></li>
+
+                                                        <li><a href="/">Left Sidebar With Categories</a></li>
+
+                                                        <li><a href="/">Right Sidebar</a></li>
+
+                                                        <li><a href="/">Right Sidebar With Categories</a></li>
+
+                                                        <li><a href="/">Without Sidebar</a></li>
+
+                                                        <li><a href="/">With Left Sidebar Fullwidth</a></li>
+
+                                                        <li><a href="/">With Right Sidebar Fullwidth</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Product Pages</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="/">Default Style</a></li>
+
+                                                        <li><a href="/">Thumbs List</a></li>
+
+                                                        <li><a href="/">Grid Style</a></li>
+
+                                                        <li><a href="/">Sticky Details</a></li>
+
+                                                        <li><a href="/">Slider Image</a></li>
+
+                                                        <li><a href="/cart">Cart</a></li>
+
+                                                        <li><a href="/checkout">Checkout</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item megamenu"><a href="#" class="nav-link">Pages <i class="fa-solid fa-chevron-down fa-sm"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Pages I</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="about.html">About Us</a></li>
+
+                                                        <li><a href="/profile">History</a></li>
+
+                                                        <li><a href="/auth">Login</a></li>
+
+
+                                                        <li><a href="/">Coming Soon</a></li>
+                                                        
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Pages II</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="categories.html">Categories</a></li>
+
+                                                        
+
+                                                        <li><a href="customer-service.html">Customer Service</a></li>
+
+                                                        <li><a href="purchase-guide.html">Purchase Guide</a></li>
+
+                                                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+
+                                                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+
+                                                        <li><a href="/auth">Signup</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Shop Styles</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="/">Left Sidebar</a></li>
+
+                                                        <li><a href="/">Left Sidebar With Categories</a></li>
+
+                                                        <li><a href="/">Right Sidebar</a></li>
+
+                                                        <li><a href="/">Right Sidebar With Categories</a></li>
+
+                                                        <li><a href="/">Without Sidebar</a></li>
+
+                                                        <li><a href="/">With Left Sidebar Fullwidth</a></li>
+
+                                                        <li><a href="/">With Right Sidebar Fullwidth</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Product Pages</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="/">Default Style</a></li>
+
+                            
+
+
+                                                        <li><a href="/">Slider Image</a></li>
+
+                                                        <li><a href="/cart">Cart</a></li>
+
+                                                        <li><a href="/checkout">Checkout</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item megamenu"><a href="#" class="nav-link">Collection <i class="fa-solid fa-chevron-down fa-sm"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- <div class="col">
+                                                    <h6 class="submenu-title">Shop Styles</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                       
+
+                                                        <li><a href="products-left-sidebar-with-categories.html">Left Sidebar With Categories</a></li>
+
+                                                        <li><a href="products-right-sidebar.html">Right Sidebar</a></li>
+
+                                                        <li><a href="products-right-sidebar-with-categories.html">Right Sidebar With Categories</a></li>
+
+                                                        <li><a href="products-without-sidebar.html">Without Sidebar</a></li>
+
+                                                        <li><a href="products-left-sidebar-fullwidth.html">With Left Sidebar Fullwidth</a></li>
+
+                                                        <li><a href="products-right-sidebar-fullwidth.html">With Right Sidebar Fullwidth</a></li>
+                                                    </ul>
+                                                </div> -->
+
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Product Pages</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="/">Default Style</a></li>
+
+                                                        <li><a href="/">Thumbs List</a></li>
+
+                                                        <li><a href="/">Grid Style</a></li>
+
+                                                        <li><a href="/">Sticky Details</a></li>
+
+                                                        <li><a href="/">Slider Image</a></li>
+
+                                                        <li><a href="/cart">Cart</a></li>
+
+                                                        <li><a href="/checkout">Checkout</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col">
+                                                    <h6 class="submenu-title">Pages I</h6>
+
+                                                    <ul class="megamenu-submenu">
+                                                        <li><a href="#">About Us</a></li>
+
+                                                        <li><a href="#">History</a></li>
+
+                                                        <li><a href="/authprofile-authentication.html">Login</a></li>
+
+                                                      
+
+                                          
+
+                                                        <li><a href="#">Coming Soon</a></li>
+
+                                                        <li><a href="#">Tracking Order</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col">
+                                                    <ul class="megamenu-submenu">
+                                                        <li>
+                                                            <!-- <div class="aside-trending-products">
+                                                                <img src="assets/img/navbar/navbar-img1.jpg" alt="image"> -->
+
+                                                                <!-- <div class="category">
+                                                                    <h4>Top Trending</h4>
+                                                                </div> -->
+
+                                                                <!-- <a href="#" class="link-btn"></a>
+                                                            </div> -->
+
+                                                            <!-- <div class="aside-trending-products">
+                                                                <img src="assets/img/navbar/navbar-img2.jpg" alt="image"> -->
+
+                                                                <!-- <div class="category">
+                                                                    <h4>Popular Products</h4>
+                                                                </div> -->
+
+                                                                <!-- <a href="#" class="link-btn"></a>
+                                                            </div> -->
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+
+                            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                        </ul>
+
+                        <div class="others-option">
+                            <div class="option-item">
+                                <div class="wishlist-btn">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#shoppingWishlistModal"><i class="fa-regular fa-heart fa-lg"></i></a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+
+
+            <!-- BREADCRUMB AREA START -->
+            <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image " data-bs-bg="img/bg/14.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ltn__breadcrumb-inner">
+                                <h1 class="page-title">Checkout</h1>
+                                <div class="ltn__breadcrumb-list">
+                                    <ul>
+                                        <li><a href="index.html"><span class="ltn__secondary-color"><i class="fa-solid fa-house" style="color: #2a96fa;"></i></span> Home</a></li>
+                                        <li>Checkout</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- BREADCRUMB AREA END -->
+
+     <!-- WISHLIST AREA START -->
+     <div class="ltn__checkout-area mb-105">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__checkout-inner">
+                        <div class="ltn__checkout-single-content ltn__returning-customer-wrap">
+                            <h5>Returning customer? <a class="ltn__secondary-color" href="#ltn__returning-customer-login" data-bs-toggle="collapse">Click here to login</a></h5>
+                            <div id="ltn__returning-customer-login" class="collapse ltn__checkout-single-content-info">
+                                <div class="ltn_coupon-code-form ltn__form-box">
+                                    <p>Please login your accont.</p>
+                                    <form action="#">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="input-item input-item-name ltn__custom-icon">
+                                                    <input type="text" name="ltn__name" placeholder="Enter your name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-item input-item-email ltn__custom-icon">
+                                                    <input type="email" name="ltn__email" placeholder="Enter email address">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn theme-btn-1 btn-effect-1 text-uppercase">Login</button>
+                                        <label class="input-info-save mb-0"><input type="checkbox" name="agree"> Remember me</label>
+                                        <p class="mt-30"><a href="register.html">Lost your password?</a></p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="ltn__checkout-single-content mt-50">
+                            <h4 class="title-2">Billing Details</h4>
+                            <div class="ltn__checkout-single-content-info">
+                                <div id="errors">
+                                    <ul class="error">
+                                    </ul>
+                                </div>
+                                <form id="shippingForm" action="/api/bill/createbill" method="post">
+                                    <input type="hidden" name="id" id="userId" value="">
+                                    <h6>Shipping Information</h6>
+                                    <div class="row" style="margin-top: 5px;">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6">
+                                            <h6>Country</h6>
+                                            <div class="input-item">
+                                                <select class="nice-select" name="country">
+                                                <option>Select Country</option>
+                                                <option>India</option>
+                                                <option>Canada</option>
+                                                <option>United Kingdom (UK)</option>
+                                                <option>United States (US)</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <h6>Address</h6>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="input-item">
+                                                        <input type="text" name="address" placeholder="House number and street name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-item">
+                                                        <input type="text" name="landmark" placeholder="Apartment, suite, unit , landmark etc. (optional)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <h6>Town / City</h6>
+                                            <div class="input-item">
+                                                <input type="text" name="town" placeholder="City">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <h6>State </h6>
+                                            <div class="input-item">
+                                                <input type="text" name="state" placeholder="State">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <h6>Zip</h6>
+                                            <div class="input-item">
+                                                <input type="text" name="zip" placeholder="Zip">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6>Order Notes (optional)</h6>
+                                    <div class="input-item input-item-textarea ltn__custom-icon">
+                                        <textarea name="ltn__message" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                    </div>
+                                    <button class="btn theme-btn-1 btn-effect-1 text-uppercase">Create Shipping Details</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ltn__checkout-payment-method mt-50" id="payment_method">
+                        <h4 class="title-2">Payment Method</h4>
+                        <div id="checkout_accordion_1">
+                            <!-- card -->
+                            <div class="card">
+                                <h5 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-1" aria-expanded="false">
+                                    Check payments
+                                </h5>
+                                <div id="faq-item-2-1" class="collapse" data-bs-parent="#checkout_accordion_1">
+                                    <div class="card-body">
+                                        <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card -->
+                            <div class="card">
+                                <h5 class="ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-2" aria-expanded="true">
+                                    Cash on delivery
+                                </h5>
+                                <div id="faq-item-2-2" class="collapse show" data-bs-parent="#checkout_accordion_1">
+                                    <div class="card-body">
+                                        <p>Pay with cash upon delivery.</p>
+                                        <button class="btn theme-btn-1 btn-effect-1 text-uppercase" id="cod-btn">Pay with COD</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card -->
+                            <div class="card">
+                                <h5 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-3" aria-expanded="false">
+                                    PayPal <img src="./img/icons/payment-4.png" alt="#">
+                                </h5>
+                                <div id="faq-item-2-3" class="collapse" data-bs-parent="#checkout_accordion_1">
+                                    <div class="card-body">
+                                        <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+                                        <button class="btn theme-btn-1 btn-effect-1 text-uppercase" id="pay-with-paypal-btn">Pay with PayPal</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ltn__payment-note mt-30 mb-30">
+                            <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
+                        </div>
+                        <button class="btn theme-btn-1 btn-effect-1 text-uppercase" id="place-order-btn" type="submit">Place order</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping-cart-total mt-50">
+                        <h4 class="title-2" id="cart_title">Cart Totals</h4>
+                        <table class="table">
+                            <tbody id="cart-total">
+                                <!-- <tr>
+                                    <td>Digital Stethoscope <strong>× 2</strong></td>
+                                    <td>$298.00</td>
+                                </tr> -->
+                                <!-- <tr>
+                                    <td>Shipping and Handing</td>
+                                    <td>$15.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Vat</td>
+                                    <td>$00.00</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Order Total</strong></td>
+                                    <td><strong>$633.00</strong></td>
+                                </tr>
+                            </tbody> -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WISHLIST AREA START -->
+
+    <!-- CALL TO ACTION START (call-to-action-6) -->
+    <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg position-relative text-center---">
+                        <div class="coll-to-info text-color-white">
+                            <h1>Buy medical disposable face mask <br> to protect your loved ones</h1>
+                        </div>
+                        <div class="btn-wrapper">
+                            <a class="btn btn-effect-3 btn-white" href="shop.html">Explore Products <i class="fa-thin fa-arrow-right" style="color: #030811;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CALL TO ACTION END -->
+
+
+                <!-- FOOTER AREA START -->
+            <footer class="ltn__footer-area  ">
+                <div class="footer-top-area  section-bg-1 plr--5">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                                <div class="footer-widget footer-about-widget">
+                                    <div class="footer-logo">
+                                        <div class="site-logo">
+                                            <img height="100px" width="100px" src="./img/HealthEasy.png" alt="Logo">
+                                        </div>
+                                    </div>
+                                    <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
+                                    <div class="footer-address">
+                                        <ul>
+                                            <li>
+                                                <div class="footer-address-icon">
+                                                    <i class="fa-solid fa-location-dot"></i>
+                                                </div>
+                                                <div class="footer-address-info">
+                                                    <p>Brooklyn, New York, United States</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="footer-address-icon">
+                                                    <i class="fa-solid fa-phone-volume"></i>
+                                                </div>
+                                                <div class="footer-address-info">
+                                                    <p><a href="tel:+0123-456789">+0123-456789</a></p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="footer-address-icon">
+                                                    <i class="icon-mail"></i>
+                                                </div>
+                                                <div class="footer-address-info">
+                                                    <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="ltn__social-media mt-20">
+                                        <ul>
+                                            <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                                            <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                                <div class="footer-widget footer-menu-widget clearfix">
+                                    <h4 class="footer-title">Company</h4>
+                                    <div class="footer-menu">
+                                        <ul>
+                                            <li><a href="about.html">About</a></li>
+                                            <!-- <li><a href="blog.html">Blog</a></li> -->
+                                            <li><a href="shop.html">All Products</a></li>
+                                            <!-- <li><a href="locations.html">Locations Map</a></li> -->
+                                            <li><a href="faq.html">FAQ</a></li>
+                                            <li><a href="contact.html">Contact us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                                <div class="footer-widget footer-menu-widget clearfix">
+                                    <h4 class="footer-title">Services</h4>
+                                    <div class="footer-menu">
+                                        <ul>
+                                            <!-- <li><a href="order-tracking.html">Order tracking</a></li> -->
+                                            <li><a href="wishlist.html">Wish List</a></li>
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="account.html">My account</a></li>
+                                            <li><a href="about.html">Terms & Conditions</a></li>
+                                            <li><a href="about.html">Promotional Offers</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                                <div class="footer-widget footer-menu-widget clearfix">
+                                    <h4 class="footer-title">Customer Care</h4>
+                                    <div class="footer-menu">
+                                        <ul>
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="account.html">My account</a></li>
+                                            <li><a href="wishlist.html">Wish List</a></li>
+                                            <!-- <li><a href="order-tracking.html">Order tracking</a></li> -->
+                                            <li><a href="faq.html">FAQ</a></li>
+                                            <li><a href="contact.html">Contact us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-sm-12 col-12">
+                                <div class="footer-widget footer-newsletter-widget">
+                                    <h4 class="footer-title">Newsletter</h4>
+                                    <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
+                                    <div class="footer-newsletter">
+                                        <form action="#">
+                                            <input type="email" name="email" placeholder="Email*">
+                                            <div class="btn-wrapper">
+                                                <button class="theme-btn-1 btn" type="submit"><i class="fas fa-location-arrow"></i></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <h5 class="mt-30">We Accept</h5>
+                                    <img src="img/icons/payment-4.png" alt="Payment Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ltn__copyright-area ltn__copyright-2 section-bg-7  plr--5">
+                    <div class="container-fluid ltn__border-top-2">
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="ltn__copyright-design clearfix">
+                                    <p>All Rights Reserved @ HealthEasy <span class="current-year"></span></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 align-self-center">
+                                <div class="ltn__copyright-menu text-end">
+                                    <ul>
+                                        <li><a style="color: #ededed;" href="#">Terms & Conditions</a></li>
+                                        <li><a style="color: #ededed;"  href="#">Claim</a></li>
+                                        <li><a style="color: #ededed;"  href="#">Privacy & Policy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- FOOTER AREA END -->
+                
+    </div>
+    <!-- Body main wrapper end -->
+
+    <!-- All JS Plugins -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+
+
+
+
+
+
+
+    </script>
+
+    <script src="js/plugins.js"></script>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+    <script src="./fetchJs/checkout.js"></script>
+
+
+</body>
+
+</html>
