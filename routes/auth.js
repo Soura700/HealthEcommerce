@@ -364,7 +364,7 @@ router.post("/forgot-password", async (req, res) => {
       const jwtToken = jwt.sign(payload, secret, { expiresIn: '15m' });
 
 
-      const emailContent = `Hello, Please click the link to reset your password: http://localhost:5500/api/auth/reset-password/${user._id}/${jwtToken}`;
+      const emailContent = `Hello, Please click the link to reset your password: https://healthecommerce-production.up.railway.app/api/auth/reset-password/${user._id}/${jwtToken}`;
 
 
       await sendMail(email, emailContent);

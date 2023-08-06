@@ -1,7 +1,7 @@
 var counter = 1;
 async function fetchOrder() {
 
-    const fetchOrder = await fetch("http://localhost:5500/api/create/getOrders?page=1");
+    const fetchOrder = await fetch("https://healthecommerce-production.up.railway.app/api/create/getOrders?page=1");
     const fetchOrderJson = await fetchOrder.json();
 
     //  fetchOrderJson is an array of objects
@@ -57,7 +57,7 @@ async function fetchOrder() {
 
 async function nextpage(p){
     var c = 0;
-    const fetchOrder = await fetch("http://localhost:5500/api/create/getOrders?page=1");
+    const fetchOrder = await fetch("https://healthecommerce-production.up.railway.app/api/create/getOrders?page=1");
     const fetchOrderJson = await fetchOrder.json();
 
     //  fetchOrderJson is an array of objects

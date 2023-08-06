@@ -1,7 +1,7 @@
 async function getProducts(){
     var ss = localStorage.getItem('Product');
 
-    const product = await fetch("http://localhost:5500/api/products/singleProduct/" + ss);
+    const product = await fetch("https://healthecommerce-production.up.railway.app/api/products/singleProduct/" + ss);
 
     const productJson = await product.json();
 
@@ -12,8 +12,8 @@ async function getProducts(){
         $("#search-products").html("");
 
         resParse.forEach(function( v , k ){
-            const data = '<div class="col-lg-3--- col-md-4 col-sm-6 col-6" id="top"><div class="ltn__product-item ltn__product-item-2 text-left"><div class="product-img"><a href="product-details.html"><img src="http://localhost:5500/'+v.img+'" alt="#"></a><div class="product-badge"><ul><li class="sale-badge">New</li></ul></div><div class="product-hover-action"><ul><li><a href="#" onclick="singleproduct(\'' + v._id + '\');event.preventDefault();" title="Quick View" data-bs-toggle="modal"data-bs-target="#quick_view_modal"><i class="far fa-eye"></i></a></li><li><a href="#" onclick="addcart(\'' + v._id + '\');viewcart(\'' + v._id + '\'); event.preventDefault();" id="cart-add" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal"><i class="fas fa-shopping-cart"></i></a></li><li><a href="#" onclick="viewWishlist(\'' + v._id + '\');addwishlist(\'' + v._id + '\');event.preventDefault();" title="Wishlist" data-bs-toggle="modal"data-bs-target="#liton_wishlist_modal"><i class="far fa-heart"></i></a></li></ul></div></div><div class="product-info"><div class="product-ratting"><ul><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star-half-alt"></i></a></li><li><a href="#"><i class="far fa-star"></i></a></li></ul></div><h2 class="product-title"><a href="product-details.html">' + v.productname +'</a></h2><div class="product-price"><span>$' + v.price + '</span><del>$46.00</del></div></div></div></div>'
-            // const data = '<div class="col-lg-3--- col-md-4 col-sm-6 col-6" id="top"><div class="ltn__product-item ltn__product-item-2 text-left"><div class="product-img"><a href="product-details.html"><img src="http://localhost:5500/'+v.img+'" alt="#"></a><div class="product-badge"><ul><li class="sale-badge">New</li></ul></div><div class="product-hover-action"><ul><li><button onclick="singleproduct(\'' + v._id + '\')" title="Quick View" data-bs-toggle="modal"data-bs-target="#quick_view_modal"><i class="far fa-eye"></i></button></li><li><button onclick="addcart(\'' + v._id + '\');viewcart(\'' + v._id + '\')" id="cart-add" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal"><i class="fas fa-shopping-cart"></i></a></li><li><a href="javascript:viewWishlist(\'' + v._id + '\');javascript:addwishlist(\'' + v._id + '\')"" title="Wishlist" data-bs-toggle="modal"data-bs-target="#liton_wishlist_modal"><i class="far fa-heart"></i></a></li></ul></div></div><div class="product-info"><div class="product-ratting"><ul><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star-half-alt"></i></a></li><li><a href="#"><i class="far fa-star"></i></a></li></ul></div><h2 class="product-title"><a href="product-details.html">' + v.productname +'</a></h2><div class="product-price"><span>$' + v.price + '</span><del>$46.00</del></div></div></div></div>'
+            const data = '<div class="col-lg-3--- col-md-4 col-sm-6 col-6" id="top"><div class="ltn__product-item ltn__product-item-2 text-left"><div class="product-img"><a href="product-details.html"><img src="https://healthecommerce-production.up.railway.app/'+v.img+'" alt="#"></a><div class="product-badge"><ul><li class="sale-badge">New</li></ul></div><div class="product-hover-action"><ul><li><a href="#" onclick="singleproduct(\'' + v._id + '\');event.preventDefault();" title="Quick View" data-bs-toggle="modal"data-bs-target="#quick_view_modal"><i class="far fa-eye"></i></a></li><li><a href="#" onclick="addcart(\'' + v._id + '\');viewcart(\'' + v._id + '\'); event.preventDefault();" id="cart-add" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal"><i class="fas fa-shopping-cart"></i></a></li><li><a href="#" onclick="viewWishlist(\'' + v._id + '\');addwishlist(\'' + v._id + '\');event.preventDefault();" title="Wishlist" data-bs-toggle="modal"data-bs-target="#liton_wishlist_modal"><i class="far fa-heart"></i></a></li></ul></div></div><div class="product-info"><div class="product-ratting"><ul><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star-half-alt"></i></a></li><li><a href="#"><i class="far fa-star"></i></a></li></ul></div><h2 class="product-title"><a href="product-details.html">' + v.productname +'</a></h2><div class="product-price"><span>$' + v.price + '</span><del>$46.00</del></div></div></div></div>'
+            // const data = '<div class="col-lg-3--- col-md-4 col-sm-6 col-6" id="top"><div class="ltn__product-item ltn__product-item-2 text-left"><div class="product-img"><a href="product-details.html"><img src="https://healthecommerce-production.up.railway.app/'+v.img+'" alt="#"></a><div class="product-badge"><ul><li class="sale-badge">New</li></ul></div><div class="product-hover-action"><ul><li><button onclick="singleproduct(\'' + v._id + '\')" title="Quick View" data-bs-toggle="modal"data-bs-target="#quick_view_modal"><i class="far fa-eye"></i></button></li><li><button onclick="addcart(\'' + v._id + '\');viewcart(\'' + v._id + '\')" id="cart-add" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal"><i class="fas fa-shopping-cart"></i></a></li><li><a href="javascript:viewWishlist(\'' + v._id + '\');javascript:addwishlist(\'' + v._id + '\')"" title="Wishlist" data-bs-toggle="modal"data-bs-target="#liton_wishlist_modal"><i class="far fa-heart"></i></a></li></ul></div></div><div class="product-info"><div class="product-ratting"><ul><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star-half-alt"></i></a></li><li><a href="#"><i class="far fa-star"></i></a></li></ul></div><h2 class="product-title"><a href="product-details.html">' + v.productname +'</a></h2><div class="product-price"><span>$' + v.price + '</span><del>$46.00</del></div></div></div></div>'
 
             $('#search-products').append(data)
         })
@@ -23,7 +23,7 @@ async function getProducts(){
 
 function singleproduct(ss) {
         
-    const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss);
+    const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss);
     fetchRes.then((res) => res.json())
         .then((d) => {
             const result = JSON.stringify(d);
@@ -46,13 +46,13 @@ function singleproduct(ss) {
 
 function singleitem(ss) {
     localStorage.setItem('ids',ss);
-    location.replace('http://localhost:5500/product-details.html')
+    location.replace('https://healthecommerce-production.up.railway.app/product-details.html')
 }
 
 
 function viewcart(ss) {
     localStorage.setItem('cart', ss);
-    const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss);
+    const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss);
     fetchRes.then((res) => res.json())
         .then((d) => {
             const result = JSON.stringify(d);
@@ -71,13 +71,13 @@ function viewcart(ss) {
 }
 
 function view() {
-    location.replace('http://localhost:5500/cart.html')
+    location.replace('https://healthecommerce-production.up.railway.app/cart.html')
 }
 
 
 function addcart(ss) {
     alert("Done");
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
@@ -85,11 +85,11 @@ function addcart(ss) {
         const parsedRes = JSON.parse(stringData);
         localStorage.setItem('cart', ss);
 
-        const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss)
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss)
     fetchRes.then((res) => res.json())
         .then((result) => {
             // console.log("Result", result);
-            fetch("http://localhost:5500/api/cart/add-to-cart", {
+            fetch("https://healthecommerce-production.up.railway.app/api/cart/add-to-cart", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -122,7 +122,7 @@ function addcart(ss) {
 
 function addwishlist(ss) {
     alert("Done");
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
@@ -131,12 +131,12 @@ function addwishlist(ss) {
         localStorage.setItem('cart', ss);
         console.log("ID"+parsedRes._id);
         console.log("ID type"+typeof(parsedRes._id));
-        const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss)
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss)
     fetchRes.then((res) => res.json())
         .then((result) => {
             console.log("Result", result);
             
-            fetch("http://localhost:5500/api/wishlist/add-to-wishlist", {
+            fetch("https://healthecommerce-production.up.railway.app/api/wishlist/add-to-wishlist", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -165,7 +165,7 @@ function addwishlist(ss) {
 }
 function viewWishlist(ss) {
     localStorage.setItem('wishlist', ss);
-    const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss);
+    const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss);
     fetchRes.then((res) => res.json())
         .then((d) => {
             const result = JSON.stringify(d);
@@ -186,14 +186,14 @@ function viewWishlist(ss) {
 function viewWishList(ss) {
     alert("Done");
     localStorage.setItem('viewwishlist', ss);
-    location.replace('http://localhost:5500/cart.html')
+    location.replace('https://healthecommerce-production.up.railway.app/cart.html')
 }
 
 function bag(){
 
     alert("Called Bag");
 
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
@@ -203,10 +203,10 @@ function bag(){
 
         // if(parsedRes._id === undefined){
         //     alert("sjndsnls")
-        //     window.location.replace("http://localhost:5500/profile-authentication.html");
+        //     window.location.replace("https://healthecommerce-production.up.railway.app/profile-authentication.html");
         // }
 
-        const fetchRes = fetch("http://localhost:5500/api/cart/cartproducts/" + parsedRes._id)
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/cart/cartproducts/" + parsedRes._id)
         fetchRes.then((res) => res.json())
         .then((result) => {
             const ans = JSON.stringify(result);
@@ -223,7 +223,7 @@ function bag(){
 
 function utilize_cart_menu(){
     alert("Utilize called ");
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
         fetchSession
         .then((res)=>res.json())
         .then((ans)=>{
@@ -233,7 +233,7 @@ function utilize_cart_menu(){
             console.log("Bose" + parsedRes._id);
 
 
-            const fetchRes = fetch("http://localhost:5500/api/cart/cartproducts/" + parsedRes._id);
+            const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/cart/cartproducts/" + parsedRes._id);
             fetchRes.then((res)=>res.json())
             .then((d)=>{
                 const res=JSON.stringify(d);

@@ -26,7 +26,7 @@
 
 //       // Send AJAX request to the backend API for autocomplete suggestions
 //       $.ajax({
-//         url: 'http://localhost:5500/api/products/get/autocomplete',
+//         url: 'https://healthecommerce-production.up.railway.app/api/products/get/autocomplete',
 //         method: 'GET',
 //         data: { term: searchTerm }, // Send the search term as a query parameter
 //         success: function(data) {
@@ -52,7 +52,7 @@ $(document).ready(function() {
   
       // Send AJAX request to the backend API for autocomplete suggestions
       $.ajax({
-        url: 'http://localhost:5500/api/products/get/autocomplete',
+        url: 'https://healthecommerce-production.up.railway.app/api/products/get/autocomplete',
         method: 'GET',
         data: { term: searchTerm },
         success: function(data) {
@@ -75,14 +75,14 @@ $(document).ready(function() {
   
     // Function to perform redirection
     function redirectToCartPage() {
-        window.location.href = 'http://localhost:5500/cart.html'; // Redirect to cart.html
+        window.location.href = 'https://healthecommerce-production.up.railway.app/cart.html'; // Redirect to cart.html
       }
   });
   
 
 
     function test() {
-        const fetchres = fetch("http://localhost:5500/api/products");
+        const fetchres = fetch("https://healthecommerce-production.up.railway.app/api/products");
         fetchres.then((res) => res.json())
             .then((d) => {
                 const result = JSON.stringify(d);
@@ -92,7 +92,7 @@ $(document).ready(function() {
                     // console.log(v.countInStock)
                     // alert(v.countInStock)
                     // console.log(v.img);
-                    const data = '<div class="col-lg-3 col-md-4 col-sm-6 col-6"><div class="ltn__product-item ltn__product-item-3 text-left"><div class="product-img"><a href="product-details.html"><img src="http://localhost:5500/'+v.img+'" alt="#"></a><div class="product-badge"><ul><li class="sale-badge">New</li></ul></div><div class="product-hover-action"><ul><li><button onclick="singleproduct(\'' + v._id + '\')" style="background-color: transparent;" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal"><i class="far fa-eye"></i></button></li><li><button id="cart-add" onclick="addcart(\'' + v._id + '\');viewcart(\'' + v._id + '\')" style="background-color: transparent;" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal"><i class="fas fa-shopping-cart"></i></button></li><li><button onclick="viewWishlist(\'' + v._id + '\');addwishlist(\'' + v._id + '\')" style="background-color: transparent;" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal"><i class="far fa-heart"></i></button></li></ul></div></div><div class="product-info"><div class="product-ratting"><ul><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star-half-alt"></i></a></li><li><a href="#"><i class="far fa-star"></i></a></li></ul></div><h2 class="product-title"><a href="product-details.html">' + v.productname + '</a></h2><div class="product-price"><span>$' + v.price + '</span><del id="alert">$46.00</del></div></div></div>'
+                    const data = '<div class="col-lg-3 col-md-4 col-sm-6 col-6"><div class="ltn__product-item ltn__product-item-3 text-left"><div class="product-img"><a href="product-details.html"><img src="https://healthecommerce-production.up.railway.app/'+v.img+'" alt="#"></a><div class="product-badge"><ul><li class="sale-badge">New</li></ul></div><div class="product-hover-action"><ul><li><button onclick="singleproduct(\'' + v._id + '\')" style="background-color: transparent;" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal"><i class="far fa-eye"></i></button></li><li><button id="cart-add" onclick="addcart(\'' + v._id + '\');viewcart(\'' + v._id + '\')" style="background-color: transparent;" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal"><i class="fas fa-shopping-cart"></i></button></li><li><button onclick="viewWishlist(\'' + v._id + '\');addwishlist(\'' + v._id + '\')" style="background-color: transparent;" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal"><i class="far fa-heart"></i></button></li></ul></div></div><div class="product-info"><div class="product-ratting"><ul><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star"></i></a></li><li><a href="#"><i class="fas fa-star-half-alt"></i></a></li><li><a href="#"><i class="far fa-star"></i></a></li></ul></div><h2 class="product-title"><a href="product-details.html">' + v.productname + '</a></h2><div class="product-price"><span>$' + v.price + '</span><del id="alert">$46.00</del></div></div></div>'
                     $("#row").append(data);
 
                     if (v.countInStock <= 10) {
@@ -117,7 +117,7 @@ $(document).ready(function() {
 
     function singleproduct(ss) {
         
-        const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss);
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss);
         fetchRes.then((res) => res.json())
             .then((d) => {
                 const result = JSON.stringify(d);
@@ -140,12 +140,12 @@ $(document).ready(function() {
 
     function singleitem(ss) {
         localStorage.setItem('ids',ss);
-        location.replace('http://localhost:5500/product-details.html')
+        location.replace('https://healthecommerce-production.up.railway.app/product-details.html')
     }
 
     function viewcart(ss) {
         localStorage.setItem('cart', ss);
-        const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss);
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss);
         fetchRes.then((res) => res.json())
             .then((d) => {
                 const result = JSON.stringify(d);
@@ -164,12 +164,12 @@ $(document).ready(function() {
     }
 
     function view() {
-        location.replace('http://localhost:5500/cart.html')
+        location.replace('https://healthecommerce-production.up.railway.app/cart.html')
     }
 
     
     function addcart(ss) {
-        const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+        const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
         fetchSession
         .then((res)=>res.json())
         .then((ans)=>{
@@ -179,14 +179,14 @@ $(document).ready(function() {
 
             if(parsedRes._id === undefined){
                 alert("Please Login First")
-                window.location.replace("http://localhost:5500/profile-authentication.html");
+                window.location.replace("https://healthecommerce-production.up.railway.app/profile-authentication.html");
             }
             else{
-                const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss)
+                const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss)
                 fetchRes.then((res) => res.json())
                     .then((result) => {
                         // console.log("Result", result);
-                        fetch("http://localhost:5500/api/cart/add-to-cart", {
+                        fetch("https://healthecommerce-production.up.railway.app/api/cart/add-to-cart", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -219,7 +219,7 @@ $(document).ready(function() {
 
 
     function addwishlist(ss) {
-        const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+        const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
         fetchSession
         .then((res)=>res.json())
         .then((ans)=>{
@@ -228,12 +228,12 @@ $(document).ready(function() {
             localStorage.setItem('cart', ss);
             console.log("ID"+parsedRes._id);
             console.log("ID type"+typeof(parsedRes._id));
-            const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss)
+            const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss)
         fetchRes.then((res) => res.json())
             .then((result) => {
                 console.log("Result", result);
                 
-                fetch("http://localhost:5500/api/wishlist/add-to-wishlist", {
+                fetch("https://healthecommerce-production.up.railway.app/api/wishlist/add-to-wishlist", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -263,7 +263,7 @@ $(document).ready(function() {
 
     function viewWishlist(ss) {
         localStorage.setItem('wishlist', ss);
-        const fetchRes = fetch("http://localhost:5500/api/products/single/" + ss);
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/products/single/" + ss);
         fetchRes.then((res) => res.json())
             .then((d) => {
                 const result = JSON.stringify(d);
@@ -284,12 +284,12 @@ $(document).ready(function() {
     function viewWishList(ss) {
 
         localStorage.setItem('viewwishlist', ss);
-        location.replace('http://localhost:5500/cart.html')
+        location.replace('https://healthecommerce-production.up.railway.app/cart.html')
     }
 
     function bag(){
 
-        const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+        const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
         fetchSession
         .then((res)=>res.json())
         .then((ans)=>{
@@ -297,7 +297,7 @@ $(document).ready(function() {
             const parsedRes = JSON.parse(stringData);
             console.log("ITZZZZ"+parsedRes._id);
 
-            const fetchRes = fetch("http://localhost:5500/api/cart/cartproducts/" + parsedRes._id)
+            const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/cart/cartproducts/" + parsedRes._id)
             fetchRes.then((res) => res.json())
             .then((result) => {
                 const ans = JSON.stringify(result);
@@ -315,7 +315,7 @@ $(document).ready(function() {
 
  function checkCookie() {
   // Fetch the "check-cookie" API route to check the session_token cookie
-  fetch("http://localhost:5500/api/auth/check-cookie")
+  fetch("https://healthecommerce-production.up.railway.app/api/auth/check-cookie")
     .then(response => response.text())
     .then(message =>{
         if(message.includes("Cookie exists: "))
@@ -338,13 +338,13 @@ $(document).ready(function() {
 
 // function checkSession() {
 //   // Fetch the "check-cookie" API route to check the session_token cookie
-//   fetch("http://localhost:5500/api/auth/getSession")
+//   fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession")
 //     .then(response => response.text())
 //     .then(message =>{
 //         if(message.includes("User not authenticated"))
 //         {
 //             alert("if block executed");
-//             window.location.replace("http://localhost:5500/profile-authentication.html")
+//             window.location.replace("https://healthecommerce-production.up.railway.app/profile-authentication.html")
 //         }
 
 //         else {
@@ -352,7 +352,7 @@ $(document).ready(function() {
 //         // Session token does not exist or has expired, redirect to the login page
 //         // alert("Session token does not exist or has expired. Redirecting to login page...");
         
-//         // window.location.replace("http://localhost:5500/profile-authentication.html");
+//         // window.location.replace("https://healthecommerce-production.up.railway.app/profile-authentication.html");
 //         // window.location.href = "/login.html"; // Replace "/login.html" with your actual login page URL
 //       }
 //     })
@@ -362,7 +362,7 @@ $(document).ready(function() {
 
 
 function utilize_cart_menu(){
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
         fetchSession
         .then((res)=>res.json())
         .then((ans)=>{
@@ -371,7 +371,7 @@ function utilize_cart_menu(){
             console.log("Soura Bose" + parsedRes);
             console.log("Bose" + parsedRes._id);
             
-            const fetchRes = fetch("http://localhost:5500/api/cart/cartproducts/" + parsedRes._id);
+            const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/cart/cartproducts/" + parsedRes._id);
             fetchRes.then((res)=>res.json())
             .then((d)=>{
                 const res=JSON.stringify(d);
@@ -410,7 +410,7 @@ function utilize_cart_menu(){
 
 async function wishlist_sidebar(){
 
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
@@ -420,7 +420,7 @@ async function wishlist_sidebar(){
         console.log("Bose" + parsedRes._id);
 
 
-        const fetchRes = fetch("http://localhost:5500/api/wishlist/get/wish-list/" + parsedRes._id);
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/wishlist/get/wish-list/" + parsedRes._id);
 
 
         fetchRes.then((res)=>res.json())
@@ -431,7 +431,7 @@ async function wishlist_sidebar(){
             console.log("Productswishlist" + cvb.wishlistProducts);
             $("#wishlist_products").html();
             cvb.wishlistProducts.forEach(function(v,k){
-                const data = '<h3>My Wishlist</h3><div class="products-cart-content" ><div class="products-cart d-flex align-items-center"><div class="products-image"><a href="#"><img src="../../'+v.img+'"  alt="image"></a></div><div class="products-content"><h3><a href="#">' + v.productname +'</a></h3><div class="products-price"><span>' + v.quantity + '</span><span>x</span><span class="price">$ ' +v.productPrice +'</span></div></div><a href="#" class="remove-btn"><i class="bx bx-trash"></i></a></div></div><div class="products-cart-subtotal"></div><div class="products-cart-btn" style="color: #2a96fa"><a href="http://localhost:5500/cart.html" class="default-btn" style="color: #2a96fa">View Shopping Cart</a></div> '
+                const data = '<h3>My Wishlist</h3><div class="products-cart-content" ><div class="products-cart d-flex align-items-center"><div class="products-image"><a href="#"><img src="../../'+v.img+'"  alt="image"></a></div><div class="products-content"><h3><a href="#">' + v.productname +'</a></h3><div class="products-price"><span>' + v.quantity + '</span><span>x</span><span class="price">$ ' +v.productPrice +'</span></div></div><a href="#" class="remove-btn"><i class="bx bx-trash"></i></a></div></div><div class="products-cart-subtotal"></div><div class="products-cart-btn" style="color: #2a96fa"><a href="https://healthecommerce-production.up.railway.app/cart.html" class="default-btn" style="color: #2a96fa">View Shopping Cart</a></div> '
                 $("#wishlist_products").append(data);
             })
         })

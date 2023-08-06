@@ -58,7 +58,7 @@ $(document).on('click', '.cart-minus', function() {
 function test(){
 
 
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
@@ -66,7 +66,7 @@ function test(){
         const parsedRes = JSON.parse(stringData);
         console.log("kjcdscdsnckwjcn" + parsedRes);
         console.log(parsedRes._id);
-        const fetchRes = fetch("http://localhost:5500/api/cart/cartproducts/" + parsedRes._id);
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/cart/cartproducts/" + parsedRes._id);
         fetchRes.then((res)=>res.json())
         .then((d)=>{
 
@@ -169,18 +169,18 @@ function test(){
         document.getElementById("couponButton").addEventListener("click", async function () {
                 var coupon = document.getElementById("couponCode").value; // Use "value" instead of "val()" to get the input value
 
-                const fetchCoupon = await fetch("http://localhost:5500/api/coupon/getCoupon/" + coupon);
+                const fetchCoupon = await fetch("https://healthecommerce-production.up.railway.app/api/coupon/getCoupon/" + coupon);
 
                 const fetchCouponJson = await fetchCoupon.json()
                 
-                const fetchSession = await fetch("http://localhost:5500/api/auth/getSession")
+                const fetchSession = await fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession")
 
                 const fetchsessionJson = await fetchSession.json();
 
                 console.log("Fetch Session" + fetchsessionJson._id)
                 
 
-                const fetchCouponUser = await fetch("http://localhost:5500/api/coupon/get/" + fetchsessionJson._id + "/" +fetchCouponJson.couponname ) ;
+                const fetchCouponUser = await fetch("https://healthecommerce-production.up.railway.app/api/coupon/get/" + fetchsessionJson._id + "/" +fetchCouponJson.couponname ) ;
 
 
 
@@ -217,7 +217,7 @@ function test(){
 
     
 
-                const updateCoupon  = await fetch("http://localhost:5500/api/coupon/update/" + fetchCouponJson._id,{
+                const updateCoupon  = await fetch("https://healthecommerce-production.up.railway.app/api/coupon/update/" + fetchCouponJson._id,{
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -297,7 +297,7 @@ function test(){
 function deleteProduct(ss){
     console.log("Delete Product :" + ss);
 
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
@@ -305,7 +305,7 @@ function deleteProduct(ss){
         const parsedRes = JSON.parse(stringData);
         console.log("kjcdscdsnckwjcn" + parsedRes);
         console.log(parsedRes._id);
-        fetch("http://localhost:5500/api/cart/cartproduct/delete/" + ss , {
+        fetch("https://healthecommerce-production.up.railway.app/api/cart/cartproduct/delete/" + ss , {
             method:"PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -321,7 +321,7 @@ function deleteProduct(ss){
     })
 
 //     $.ajax({
-//         url:"http://localhost:5500/api/cart/cartproduct/delete/" + ss,
+//         url:"https://healthecommerce-production.up.railway.app/api/cart/cartproduct/delete/" + ss,
 //         method:'DELETE',
 //         success:function(){
 //           alert("Record has been deleted")
@@ -335,13 +335,13 @@ function deleteProduct(ss){
 
 function updateCart(product,quantity){
     alert("Done");
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
         const stringData = JSON.stringify(ans)
         const parsedRes = JSON.parse(stringData);
-            fetch("http://localhost:5500/api/cart/update-cart-product", {
+            fetch("https://healthecommerce-production.up.railway.app/api/cart/update-cart-product", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

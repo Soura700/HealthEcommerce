@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded",async  function () {
         });
 
 
-     const billResponse = await   fetch("http://localhost:5500/api/auth/register",{
+     const billResponse = await   fetch("https://healthecommerce-production.up.railway.app/api/auth/register",{
                 method:"POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded",async  function () {
 
         
 
-     const billResponse = await   fetch("http://localhost:5500/api/auth/login",{
+     const billResponse = await   fetch("https://healthecommerce-production.up.railway.app/api/auth/login",{
                 method:"POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -124,10 +124,10 @@ document.addEventListener("DOMContentLoaded",async  function () {
                 const responseData = await billResponse.json();
                 if (responseData.isAdmin === 1) {
                     // Admin login was successful, redirect to /admin
-                    window.location.href = 'http://localhost:5500/admin.html'; // Replace '/admin' with the actual URL for admin panel
+                    window.location.href = 'https://healthecommerce-production.up.railway.app/admin.html'; // Replace '/admin' with the actual URL for admin panel
                 } else {
                     // Customer login was successful, redirect to index.html
-                    window.location.href = 'http://localhost:5500/index.html'; // Replace 'index.html' with your actual home page URL
+                    window.location.href = 'https://healthecommerce-production.up.railway.app/index.html'; // Replace 'index.html' with your actual home page URL
                 }
     
             }
@@ -189,7 +189,7 @@ $(document).ready(function() {
     // Function to send the "Forgot Password" request to the server
     function sendForgotPasswordRequest(email) {
         $.ajax({
-            url: "http://localhost:5500/api/auth/forgot-password", // Update the endpoint based on your server setup
+            url: "https://healthecommerce-production.up.railway.app/api/auth/forgot-password", // Update the endpoint based on your server setup
             method: "POST",
             data: { email: email },
             success: function(response) {

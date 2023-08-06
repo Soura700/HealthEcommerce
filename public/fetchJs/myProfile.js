@@ -1,7 +1,7 @@
 
 function test(){
 
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
@@ -9,7 +9,7 @@ function test(){
         const parsedRes = JSON.parse(stringData);
         console.log("kjcdscdsnckwjcn" + parsedRes);
         console.log(parsedRes._id);
-        const fetchRes = fetch("http://localhost:5500/api/create/" + parsedRes._id);
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/create/" + parsedRes._id);
         fetchRes.then((res)=>res.json())
         .then((d)=>{
             const res=JSON.stringify(d);
@@ -62,7 +62,7 @@ function test(){
                           orderDeail.cartProducts.forEach(function (cartProduct) {
                             const productName = cartProduct.productname; // Extract the product name
                             console.log("Product Name:", productName);
-                            const data = '<ol class="timeline history-timeline"><li class="timeline-block"><div class="timeline-date"><span>2010</span> February 20<sup>th</sup></div><div class="timeline-icon"><span class="dot-badge"></span></div><div class="timeline-content"><div class="row align-items-center"><div class="col-lg-7 col-md-12"><div class="content"><h3>Delivery: ' + delivery + ' </h3><p>Product: ' + productName + '</p></div></div><div class="col-lg-5 col-md-12"><div class="image"><img src=http://localhost:5500/'+cartProduct.img+'" alt="image"></div></div></div></div></li></ol>'
+                            const data = '<ol class="timeline history-timeline"><li class="timeline-block"><div class="timeline-date"><span>2010</span> February 20<sup>th</sup></div><div class="timeline-icon"><span class="dot-badge"></span></div><div class="timeline-content"><div class="row align-items-center"><div class="col-lg-7 col-md-12"><div class="content"><h3>Delivery: ' + delivery + ' </h3><p>Product: ' + productName + '</p></div></div><div class="col-lg-5 col-md-12"><div class="image"><img src=https://healthecommerce-production.up.railway.app/'+cartProduct.img+'" alt="image"></div></div></div></div></li></ol>'
                             $("#orders").append(data);
                           });
                         });
@@ -78,7 +78,7 @@ function test(){
   
   document.getElementById("logout").addEventListener('click',function(){
     alert('Clicked');
-    fetch('http://localhost:5500/api/auth/logout',{
+    fetch('https://healthecommerce-production.up.railway.app/api/auth/logout',{
       method:"POST",
       headers: {
         'Content-Type': 'application/json',

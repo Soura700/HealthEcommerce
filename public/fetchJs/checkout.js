@@ -6,7 +6,7 @@ const couponId = sessionStorage.getItem('Id');
         const errorsDiv = document.getElementById('errors');
 
 
-        const response = await fetch("http://localhost:5500/api/auth/getSession"); //Fetching the session of the user to et th euser id
+        const response = await fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession"); //Fetching the session of the user to et th euser id
         const data = await response.json();
 
 
@@ -24,7 +24,7 @@ const couponId = sessionStorage.getItem('Id');
             });
 
 
-         const billResponse = await   fetch("http://localhost:5500/api/bill/createbill",{
+         const billResponse = await   fetch("https://healthecommerce-production.up.railway.app/api/bill/createbill",{
                     method:"POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -67,7 +67,7 @@ function test(){
     var total = 0;
     const shippingCharge = 15.00;
     var alltotal = 0;
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
@@ -75,7 +75,7 @@ function test(){
         const parsedRes = JSON.parse(stringData);
         console.log("kjcdscdsnckwjcn" + parsedRes);
         console.log(parsedRes._id);
-        const fetchRes = fetch("http://localhost:5500/api/cart/cartproducts/" + parsedRes._id);
+        const fetchRes = fetch("https://healthecommerce-production.up.railway.app/api/cart/cartproducts/" + parsedRes._id);
         fetchRes.then((res)=>res.json())
         .then((d)=>{
             const res=JSON.stringify(d);
@@ -158,7 +158,7 @@ function test(){
 
 function cashOnDelivery(){
     alert("Done");
-    const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+    const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
     fetchSession
     .then((res)=>res.json())
     .then((ans)=>{
@@ -174,7 +174,7 @@ function cashOnDelivery(){
         if(couponId){
             alert("Executed if block");
 
-            const couponData = fetch("http://localhost:5500/api/coupon/get/" + couponId)
+            const couponData = fetch("https://healthecommerce-production.up.railway.app/api/coupon/get/" + couponId)
 
             couponData.then((res)=>res.json())
             .then( async (d)=>{
@@ -185,7 +185,7 @@ function cashOnDelivery(){
 
 
                 
-                const fetchCart = await fetch ("http://localhost:5500/api/cart/cartproducts/" + parsedRes._id)
+                const fetchCart = await fetch ("https://healthecommerce-production.up.railway.app/api/cart/cartproducts/" + parsedRes._id)
 
                 
 
@@ -196,7 +196,7 @@ function cashOnDelivery(){
                 
 
 
-                 fetch("http://localhost:5500/api/create/order",{
+                 fetch("https://healthecommerce-production.up.railway.app/api/create/order",{
                     method:"POST",
                     headers: {
                             "Content-Type": "application/json",
@@ -213,7 +213,7 @@ function cashOnDelivery(){
         
                     // alert("Data Updatation");
         
-                    fetch("http://localhost:5500/api/products/update",{
+                    fetch("https://healthecommerce-production.up.railway.app/api/products/update",{
                         method:"PUT",
                         headers: {
                             'Content-Type': 'application/json'
@@ -224,7 +224,7 @@ function cashOnDelivery(){
                         // Order has been created so deleting the cart
                         alert("Cart Deletion"); 
                          
-                        fetch("http://localhost:5500/api/cart/delete/" + parsedRes._id , {
+                        fetch("https://healthecommerce-production.up.railway.app/api/cart/delete/" + parsedRes._id , {
                         method:"DELETE",
                         headers: {
                             'Content-Type': 'application/json'
@@ -232,7 +232,7 @@ function cashOnDelivery(){
                      })
                         console.log("Product Update Success" + a)
         
-                        const getCoupon = fetch("http://localhost:5500/api/coupon/get/" + couponId);
+                        const getCoupon = fetch("https://healthecommerce-production.up.railway.app/api/coupon/get/" + couponId);
         
                         getCoupon.then((res)=>res.json())
                         .then((coupon)=>{
@@ -243,7 +243,7 @@ function cashOnDelivery(){
         
                             // const updateCoupon =
                             // Updating the coupon status to 2
-                             fetch('http://localhost:5500/api/coupon/update/' + couponId,{
+                             fetch('https://healthecommerce-production.up.railway.app/api/coupon/update/' + couponId,{
                                 method: "PUT",
                                 headers: {
                                     "Content-Type": "application/json",
@@ -280,7 +280,7 @@ function cashOnDelivery(){
         else{
             alert("Else Block")
 
-            fetch("http://localhost:5500/api/create/order",{
+            fetch("https://healthecommerce-production.up.railway.app/api/create/order",{
                 method:"POST",
                 headers: {
                         "Content-Type": "application/json",
@@ -296,7 +296,7 @@ function cashOnDelivery(){
     
                 alert("Data Updatation");
     
-                fetch("http://localhost:5500/api/products/update",{
+                fetch("https://healthecommerce-production.up.railway.app/api/products/update",{
                     method:"PUT",
                     headers: {
                         'Content-Type': 'application/json'
@@ -307,7 +307,7 @@ function cashOnDelivery(){
                     // Order has been created so deleting the cart
                     alert("Cart Deletion"); 
                      
-                    fetch("http://localhost:5500/api/cart/delete/" + parsedRes._id , {
+                    fetch("https://healthecommerce-production.up.railway.app/api/cart/delete/" + parsedRes._id , {
                     method:"DELETE",
                     headers: {
                         'Content-Type': 'application/json'
@@ -315,7 +315,7 @@ function cashOnDelivery(){
                  })
                     console.log("Product Update Success" + a)
     
-                    const getCoupon = fetch("http://localhost:5500/api/coupon/get/" + couponId);
+                    const getCoupon = fetch("https://healthecommerce-production.up.railway.app/api/coupon/get/" + couponId);
     
                     getCoupon.then((res)=>res.json())
                     .then((coupon)=>{
@@ -326,7 +326,7 @@ function cashOnDelivery(){
     
                         // const updateCoupon =
                         // Updating the coupon status to 2
-                         fetch('http://localhost:5500/api/coupon/update/' + couponId,{
+                         fetch('https://healthecommerce-production.up.railway.app/api/coupon/update/' + couponId,{
                             method: "PUT",
                             headers: {
                                 "Content-Type": "application/json",
@@ -353,7 +353,7 @@ function cashOnDelivery(){
 
 
 
-        // fetch("http://localhost:5500/api/create/order",{
+        // fetch("https://healthecommerce-production.up.railway.app/api/create/order",{
         //     method:"POST",
         //     headers: {
         //             "Content-Type": "application/json",
@@ -368,7 +368,7 @@ function cashOnDelivery(){
 
         //     alert("Data Updatation");
 
-        //     fetch("http://localhost:5500/api/products/update",{
+        //     fetch("https://healthecommerce-production.up.railway.app/api/products/update",{
         //         method:"PUT",
         //         headers: {
         //             'Content-Type': 'application/json'
@@ -379,7 +379,7 @@ function cashOnDelivery(){
         //         // Order has been created so deleting the cart
         //         alert("Cart Deletion"); 
                  
-        //         fetch("http://localhost:5500/api/cart/delete/" + parsedRes._id , {
+        //         fetch("https://healthecommerce-production.up.railway.app/api/cart/delete/" + parsedRes._id , {
         //         method:"DELETE",
         //         headers: {
         //             'Content-Type': 'application/json'
@@ -387,7 +387,7 @@ function cashOnDelivery(){
         //      })
         //         console.log("Product Update Success" + a)
 
-        //         const getCoupon = fetch("http://localhost:5500/api/coupon/get/" + couponId);
+        //         const getCoupon = fetch("https://healthecommerce-production.up.railway.app/api/coupon/get/" + couponId);
 
         //         getCoupon.then((res)=>res.json())
         //         .then((coupon)=>{
@@ -398,7 +398,7 @@ function cashOnDelivery(){
 
         //             // const updateCoupon =
         //             // Updating the coupon status to 2
-        //              fetch('http://localhost:5500/api/coupon/update/' + couponId,{
+        //              fetch('https://healthecommerce-production.up.railway.app/api/coupon/update/' + couponId,{
         //                 method: "PUT",
         //                 headers: {
         //                     "Content-Type": "application/json",
@@ -441,7 +441,7 @@ payWithCODBtn.addEventListener("click", cashOnDelivery);
 // const botton = document.getElementById("pay-with-paypal-btn")
 // botton.addEventListener("click",()=>{
 //     console.log("Chekckout")
-//     fetch("http://localhost:5500/api/checkout-session",{
+//     fetch("https://healthecommerce-production.up.railway.app/api/checkout-session",{
 //         method:"POST",
 //         headers:{
 //             'Content-Type':'application/json'
@@ -473,7 +473,7 @@ const button = document.getElementById("pay-with-paypal-btn");
 button.addEventListener("click", async () => {
 try {
 
-const fetchSession = await fetch("http://localhost:5500/api/auth/getSession");
+const fetchSession = await fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
 
 const res = await fetchSession.json();
 
@@ -486,7 +486,7 @@ console.log( typeof(parsedRes._id) + parsedRes._id );
 const userId = parsedRes._id; // Replace this with the actual userId (from authentication or other source)
 
 
-const cartProductsResponse = await fetch("http://localhost:5500/api/cart/cartproducts/" + parsedRes._id);
+const cartProductsResponse = await fetch("https://healthecommerce-production.up.railway.app/api/cart/cartproducts/" + parsedRes._id);
 const cartProductsData = await cartProductsResponse.json();
 const resProduct = JSON.stringify(cartProductsData);
 const ansData = JSON.parse(resProduct);
@@ -511,7 +511,7 @@ quantity: item.quantity,
 console.log("Items" + items);
 
 // Step 2: Use the cart products data to create the checkout session
-const checkoutSessionResponse = await fetch("http://localhost:5500/api/checkout-session", {
+const checkoutSessionResponse = await fetch("https://healthecommerce-production.up.railway.app/api/checkout-session", {
 method: "POST",
 headers: {
 'Content-Type': 'application/json',

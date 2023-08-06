@@ -107,8 +107,8 @@ router.post("/checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       mode: "payment",
       line_items: lineItems,
-      success_url: "http://localhost:5500",
-      cancel_url: "http://localhost:5500/checkout",
+      success_url: "https://healthecommerce-production.up.railway.app/",
+      cancel_url: "https://healthecommerce-production.up.railway.app/checkout",
     });
 
     res.json({ url: session.url });
