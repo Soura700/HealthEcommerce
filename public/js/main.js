@@ -103,7 +103,7 @@
                 var $this = $(this),
                     $target = $this.attr('href');
         
-                const fetchSession = fetch("http://localhost:5500/api/auth/getSession");
+                const fetchSession = fetch("https://healthecommerce-production.up.railway.app/api/auth/getSession");
                 fetchSession
                 .then((res) => res.json())
                 .then((ans) => {
@@ -113,7 +113,7 @@
         
                     if (parsedRes._id === undefined) {
                         alert("sjndsnls");
-                        window.location.replace("http://localhost:5500/profile-authentication.html");
+                        window.location.replace("https://healthecommerce-production.up.railway.app/auth");
                     } else {
                         $body.addClass('ltn__utilize-open');
                         $($target).addClass('ltn__utilize-open');
