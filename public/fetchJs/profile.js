@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded",async  function () {
                     "Content-Type": "application/json",
                 },
                 body:JSON.stringify({
-                    username:formDataObject.country,
-                    email:formDataObject.address,
-                    phone:formDataObject.town,
-                    password:formDataObject.state,
+                    username:formDataObject.username,
+                    email:formDataObject.email,
+                    phone:formDataObject.phone,
+                    password:formDataObject.password,
                 })
             });
 
