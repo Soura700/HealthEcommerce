@@ -140,13 +140,13 @@ document.addEventListener("DOMContentLoaded",async  function () {
 
             }
 
-            // else if(billResponse.status === 401){
-            //     const errors = await billResponse.text();
-            //     console.log(errors);
-            //     // errorsDiv.innerHTML = errors;
-            //     errorsDiv.innerHTML = `<div class="alert alert-warning" role="alert">Phone no.Already registered...Provide another credentials</div>`;
+            else if(billResponse.status === 400){
+                // const errors = await billResponse.text();
+                // console.log(errors);
+                // // errorsDiv.innerHTML = errors;
+                errorsDiv.innerHTML = `<div class="alert alert-warning" role="alert">Wrong Credentials</div>`;
 
-            // }
+            }
 
 
             else{
