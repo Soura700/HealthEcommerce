@@ -160,18 +160,24 @@ router.put("/cartproduct/delete/:product", async (req, res) => {
   try {
     const cart = await Cart.findOne({ userId });
 
+    // Checking the existence of the cart
     if (!cart) {
       return res.status(404).json({ message: "Cart not found" });
     }
 
+    // if the cart present then it will find the product that we want to remove
+
+    // Here in the next line of code it will traverse through the array and will check with the product that we accepting in the params..if found then it will return 
     const productToRemove = cart.cartProducts.find(
       (cartProduct) => cartProduct.product.toString() === product
     );
 
+    // If product that we want to remove not found then error
     if (!productToRemove) {
       return res.status(404).json({ message: "Product not found in cart" });
     }
 
+    // else calculate the new total
     // Calculate the new cart item count and total price
     const updatedCartItemCount = cart.cartItemCount - productToRemove.quantity;
     const updatedTotalPrice =
@@ -179,6 +185,7 @@ router.put("/cartproduct/delete/:product", async (req, res) => {
 
     // Remove the product from cartProducts array...It will check the id of the product that i want to remove to the iterated product id..if it is matched then removed ..other wise 
     // Create a new array ..so new array is created an updatd with the older one..
+
     cart.cartProducts = cart.cartProducts.filter(
       (cartProduct) => cartProduct.product.toString() !== product
     );
