@@ -183,9 +183,9 @@ router.put("/cartproduct/delete/:product", async (req, res) => {
     const updatedTotalPrice =
       cart.totalPrice - productToRemove.quantity * productToRemove.productPrice;
 
-    // Remove the product from cartProducts array...It will check the id of the product that i want to remove to the iterated product id..if it is matched then removed ..other wise 
+    // Remove the product from cartProducts array...It will check the id of the product that i want to remove with the iterated product id..if it is matched then removed ..other wise 
     // Create a new array ..so new array is created an updatd with the older one..
-
+    // Iterate through the Array..match the cart product with the array that we want to delete ....the products that will not match ...those products will be kept in the new array and will be returned as output
     cart.cartProducts = cart.cartProducts.filter(
       (cartProduct) => cartProduct.product.toString() !== product
     );
