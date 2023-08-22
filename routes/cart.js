@@ -245,7 +245,7 @@ router.put("/update-cart-product", async (req, res) => {
         const savedCart = await existingCart.save();
         res.status(200).json(savedCart);
       } else {
-        console.log("fuck")
+
         res.status(401).json({ message: "Product not found in cart" });
       }
     } else {
